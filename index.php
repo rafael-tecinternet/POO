@@ -7,37 +7,36 @@
     <title>Exemplo 4</title>
 </head>
 <body>
-    <h1>PHP POO - Exemplo 4</h1>
+    <h1>PHP POO - Exemplo 5</h1>
     <hr>
     <h2>Assuntos abordados:</h2>
     <ul>
-        <li>Encapsulamento</li>
-        <li>Modificadores de visibilidade</li>
-        <li>Métodos  de acesso: getters(pegar os dados - leitura) e setters(colocar dados)</li>
+        <li>Heranç<a href="tel:+"></a></li>
     </ul>
 <?php
 // Importando a classe
 require_once "src/Clinte.php";
+require_once "src/PessoaFisica.php";
+require_once "src/PessoaJuridica.php";
 // criação dos objetos
-$clienteA = new Cliente;
-$clienteB = new Cliente;
+$clientePF = new PessoaFisica;
+$clientePJ = new PessoaJuridica;
 // Atribundo dados via setters do objeto
-$clienteA->setNome("Rafael");
-$clienteA->setEmail("Rafael@gmail.com");
-$clienteA->setSenha("123456");
-$clienteB->setNome("Noronha");
-$clienteB->setEmail("noronha@gmail.com");
-$clienteB->setSenha("12345689");
+$clientePF->setNome('Rafael');
+$clientePF->setEmail('Rafael@gmail.com');
+$clientePF->setSenha('123abc');
+$clientePF->setCpf('123.456.789-00');
+$clientePF->setIdade(38);
 
+$clientePJ->setNome('Augusto');
+$clientePJ->setEmail('Augusto@gmail.com');
+$clientePJ->setSenha('124556');
+$clientePJ->setCnpj('05.055.045/0001-56');
+$clientePJ->setAnoFundacao(1950);
+$clientePJ->setNomeFantasia('infotec');
 ?>
 <!-- Exibindo DADOS -->
-<h2>Dados dos objetos (leitura via getters)</h2>
-<h3><?=$clienteA->getNome()?></h3>
-<h3><?=$clienteA->getEmail()?></h3>
-<h3><?=$clienteA->getSenha()?></h3>
-<h3><?=$clienteB->getNome()?></h3>
-<h3><?=$clienteB->getEmail()?></h3>
-<h3><?=$clienteB->getSenha()?></h3>
-
+<pre><?=var_dump($clientePF)?></pre>
+<pre><?=var_dump($clientePJ)?></pre>
 </body>
 </html>
