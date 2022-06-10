@@ -1,4 +1,5 @@
 <?php
+require_once "Clinte.php";
     class PessoaJuridica extends Cliente {
         private string $cnpj;
         private int $anoFundacao;

@@ -15,9 +15,8 @@
     </ul>
 <?php
 // Importando a classe
-require_once "src/Clinte.php";
-require_once "src/PessoaFisica.php";
-require_once "src/PessoaJuridica.php";
+require_once "src/PessoaFisica.php"; // subclasse
+require_once "src/PessoaJuridica.php"; // subclasse
 // criação dos objetos
 $clientePF = new PessoaFisica;
 $clientePJ = new PessoaJuridica;
@@ -34,9 +33,13 @@ $clientePJ->setSenha('124556');
 $clientePJ->setCnpj('05.055.045/0001-56');
 $clientePJ->setAnoFundacao(1950);
 $clientePJ->setNomeFantasia('infotec');
+
+
 ?>
 <!-- Exibindo DADOS -->
-<pre><?=var_dump($clientePF)?></pre>
-<pre><?=var_dump($clientePJ)?></pre>
+<pre><?=var_dump($clientePJ, $clientePF)?></pre>
+<?php $Cliente = new Cliente; ?> <!-- Erro, pois cliente é abstrato -->
+<pre><?=var_dump($Cliente)?></pre>
+
 </body>
 </html>
